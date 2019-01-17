@@ -22,49 +22,23 @@ and trunks. */
     [type='trunk'] { line-width: 0.5; } }
 }
 
-/* At mid-level scales start to show primary and secondary routes
-as well. */
-
-#roads_med[zoom>=9][zoom<=13] {
-  [type='motorway'],
-  [type='motorway_link'] {
-    line-color: @motorway_line;
-  }
-  [type='trunk'],
-  [type='trunk_link'] {
-    line-color: @trunk_line;
-  }
-  [type='primary'] { line-color: @primary_line; }
-  [type='secondary'] { line-color: @secondary_line; }
-  [type='tertiary'] { line-color: @standard_line; }
-  [zoom=9] {
-    [type='motorway'],[type='trunk'] { line-width: 1.4; }
-    [type='primary'],[type='secondary'],
-    [type='motorway_link'],[type='trunk_link'] { line-width: 0.6; }
-  }
-  [zoom=10] {
-    [type='motorway'],[type='trunk'] { line-width: 1.8; }
-    [type='primary'],[type='secondary'],
-    [type='motorway_link'],[type='trunk_link'] { line-width: 0.8; }
-  }
-}
-
 /* At higher levels the roads become more complex. We're now showing 
 more than just automobile routes - railways, footways, and cycleways
 come in as well.
 
 /* Road width variables that are used in road & bridge styles */
-@rdz11_maj: 1.6; @rdz11_med: 0.8; @rdz11_min: 0.4;
-@rdz12_maj: 2.5; @rdz12_med: 1.2; @rdz12_min: 0.8;
-@rdz13_maj: 3;   @rdz13_med: 1.5; @rdz13_min: 1;
-@rdz14_maj: 4;   @rdz14_med: 2.5; @rdz14_min: 1.6;
+@rdz09_maj: 2.8; @rdz09_med: 2.4; @rdz09_min: 0.8;
+@rdz10_maj: 3.4; @rdz10_med: 2.8; @rdz10_min: 1.0;
+@rdz11_maj: 5; @rdz11_med: 3; @rdz11_min: 1.2;
+@rdz12_maj: 5.2; @rdz12_med: 3.2; @rdz12_min: 1.4;
+@rdz13_maj: 5.5;   @rdz13_med: 3.5; @rdz13_min: 1.6;
+@rdz14_maj: 5.8;   @rdz14_med: 3.7; @rdz14_min: 1.8;
 @rdz15_maj: 6;   @rdz15_med: 4;   @rdz15_min: 2;
 @rdz16_maj: 8;   @rdz16_med: 6;   @rdz16_min: 4;
 @rdz17_maj: 14;  @rdz17_med: 12;  @rdz17_min: 10;
 @rdz18_maj: 20;  @rdz18_med: 17;  @rdz18_min: 14;
 
 /* ---- Casing ----------------------------------------------- */
-
 #roads_high::outline[zoom>=14][zoom<=20],
 #tunnel[render='1_outline'][zoom>=14][zoom<=20],
 #bridge[render='1_outline'][zoom>=14][zoom<=20]{
@@ -173,7 +147,7 @@ come in as well.
   }
 }
 
-
+#roads_med[zoom>=9][zoom<=13],
 #roads_high[zoom>=14][zoom<=20],
 #tunnel[render='3_inline'][zoom>=14][zoom<=20],
 #bridge[render='3_inline'][zoom>=14][zoom<=20]{
@@ -224,6 +198,16 @@ come in as well.
     line-cap: butt;
   }
   /* -- widths -- */
+  [zoom=9] {
+    [stylegroup='motorway'] { line-width: @rdz09_maj; }
+    [stylegroup='mainroad'] { line-width: @rdz09_med; }
+    [stylegroup='minorroad']{ line-width: 0; }
+  }
+  [zoom=10] {
+    [stylegroup='motorway'] { line-width: @rdz10_maj; }
+    [stylegroup='mainroad'] { line-width: @rdz10_med; }
+    [stylegroup='minorroad']{ line-width: 0; }
+  }
   [zoom=11] {
     [stylegroup='motorway'] { line-width: @rdz11_maj; }
     [stylegroup='mainroad'] { line-width: @rdz11_med; }
