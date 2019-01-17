@@ -25,7 +25,7 @@ and trunks. */
 /* At mid-level scales start to show primary and secondary routes
 as well. */
 
-#roads_med[zoom>=9][zoom<=10] {
+#roads_med[zoom>=9][zoom<=13] {
   [type='motorway'],
   [type='motorway_link'] {
     line-color: @motorway_line;
@@ -65,9 +65,9 @@ come in as well.
 
 /* ---- Casing ----------------------------------------------- */
 
-#roads_high::outline[zoom>=11][zoom<=20],
-#tunnel[render='1_outline'][zoom>=11][zoom<=20],
-#bridge[render='1_outline'][zoom>=11][zoom<=20]{
+#roads_high::outline[zoom>=14][zoom<=20],
+#tunnel[render='1_outline'][zoom>=14][zoom<=20],
+#bridge[render='1_outline'][zoom>=14][zoom<=20]{
   /* -- colors & styles -- */
   line-cap: round;
   [bridge=1],
@@ -174,9 +174,9 @@ come in as well.
 }
 
 
-#roads_high[zoom>=11][zoom<=20],
-#tunnel[render='3_inline'][zoom>=11][zoom<=20],
-#bridge[render='3_inline'][zoom>=11][zoom<=20]{
+#roads_high[zoom>=14][zoom<=20],
+#tunnel[render='3_inline'][zoom>=14][zoom<=20],
+#bridge[render='3_inline'][zoom>=14][zoom<=20]{
   /* -- colors & styles -- */
   line-color: @standard_fill;
   [type='motorway'],
@@ -348,7 +348,7 @@ come in as well.
 /* AEROWAYS
 /* ================================================================== */
 
-#aeroway[zoom>9] {
+#aeroway[zoom>11] {
   line-color:@aeroway;
   line-cap:butt;
   line-join:miter;
